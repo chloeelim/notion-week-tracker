@@ -32,6 +32,12 @@
          1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"></path>
       </svg>
 
+      <!-- settings: hide progress bar/ percentage/ week type/ change progress color/ background/ font color -->
+      <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" class="controls" onClick="openSettingsModal()">
+        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0
+         6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+      </svg>
+
       <h2 id="curr_wk"></h2>
       <div id="curr_datetime">
         <span id="date"></span>
@@ -45,6 +51,21 @@
         <span id="progress_percentage"></span>
       </div>
       <script  src="./script.js"></script>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+      <div id="settings-modal-content">
+        <span class="close" onClick="closeSettingsModal()">&times;</span>
+        <div>
+          <h3>Settings</h3>
+          <span>Show progress bar and percentage</span>
+          <label class="switch" onClick="toggleProgressShow()">
+            <input type="checkbox" id="show-progress-percentage" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
     </div>
   </body>
 </html>

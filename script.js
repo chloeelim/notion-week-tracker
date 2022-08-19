@@ -59,17 +59,41 @@ function decreaseTextSize() {
 function toggleAppearance() {
     const body = document.body;
     var bkgrdColor = getComputedStyle(body, null).backgroundColor;
-    if (bkgrdColor === "rgba(15, 15, 15, 0.8)") {
+    console.log(bkgrdColor);
+    if (bkgrdColor === "rgb(25, 25, 25)") {
         body.style.backgroundColor = "white";
         body.style.color = "black";
         Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "black");
         document.getElementById("progress").style.backgroundColor = "#aaaaaa55";
+        document.getElementById("settings-modal-content").style.backgroundColor = "white";
     } else {
         body.style.backgroundColor = "rgb(25,25,25)";
         body.style.color = "white";
         Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "white");
         document.getElementById("progress").style.backgroundColor = "white";
+        document.getElementById("settings-modal-content").style.backgroundColor = "rgb(25, 25, 25)";
     }
+}
+
+function openSettingsModal() {
+  document.getElementById("settingsModal").style.display = "block";
+}
+
+function closeSettingsModal() {
+  document.getElementById("settingsModal").style.display = "none";
+}
+
+function toggleProgressShow() {
+  var checkbox = document.getElementById("show-progress-percentage");
+  var progress = document.getElementById("progress_track");
+  var currShow = checkbox.checked;
+  if (currShow) {
+    checkbox.checked = false;
+    progress.style.display = "none";
+  } else {
+      checkbox.checked = true;
+      progress.style.display = "flex";
+  }
 }
 
 setInterval(setTime, 1000);
