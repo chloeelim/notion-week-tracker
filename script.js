@@ -31,7 +31,7 @@ function setTime() {
 
 function textSizeHelper(x, func) {
     console.log(func);
-    var size = x.currentStyle || parseInt(getComputedStyle(x, null).fontSize.slice(0, -2));
+    var size = parseInt(getComputedStyle(x, null).fontSize.slice(0, -2));
     if (size) {
       size = func(size) + "px";
       console.log("new size:", size);
@@ -54,6 +54,22 @@ function increaseTextSize() {
 
 function decreaseTextSize() {
     textSizeRecursive(document.body.children, x => x - 1);
+}
+
+function toggleAppearance() {
+    const body = document.body;
+    var bkgrdColor = getComputedStyle(body, null).backgroundColor;
+    if (bkgrdColor === "rgba(15, 15, 15, 0.8)") {
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+        Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "black");
+        document.getElementById("progress").style.backgroundColor = "#aaaaaa55";
+    } else {
+        body.style.backgroundColor = "rgba(15, 15, 15, 0.8)";
+        body.style.color = "white";
+        Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "white");
+        document.getElementById("progress").style.backgroundColor = "white";
+    }
 }
 
 setInterval(setTime, 1000);
