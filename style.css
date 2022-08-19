@@ -6,6 +6,7 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
+  font-size: 100%;
 }
 
 #curr_wk {
@@ -44,4 +45,14 @@ body {
 #progress_track {
   display: flex;
   flex-direction: row;
+}
+
+#text_size_control {
+    height: 30px;
+    fill: white;
+    margin-left: 10px;
+}
+
+#text_size_control:hover {
+    cursor: pointer;
 }

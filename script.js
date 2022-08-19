@@ -3,17 +3,6 @@ const lastWeekOfSem1 = 23;
 const lastWeekOfSem2 = 40;
 const lastWeekOfSpecialSem1 = 46;
 const lastWeekOfSpecialSem2 = 52;
-
-const currAcadWkInfo = getAcadWeekInfo(new Date());
-document.getElementById("curr_wk").innerHTML = `AY22/23 ${currAcadWkInfo.sem}, Week ${currAcadWkInfo.num} [${currAcadWkInfo.type}]`;
-
-if(currAcadWkInfo.sem === "Semester 1") {
-  console.log((currAcadWkInfo.num / lastWeekOfSem1));
-  var elem = document.getElementById("progress_bar");
-  elem.style.width = (currAcadWkInfo.num / 13) * 100 + "%";
-  document.getElementById("progress_percentage").innerHTML = Math.ceil((currAcadWkInfo.num / 13) * 100) + "%";
-}
-
 const options = {
   weekday: 'long',
   year: 'numeric',
@@ -25,8 +14,46 @@ const options = {
   hour12: true
 };
 
+const currAcadWkInfo = getAcadWeekInfo(new Date());
+document.getElementById("curr_wk").innerHTML = `AY22/23 ${currAcadWkInfo.sem}, Week ${currAcadWkInfo.num}
+                                                [${currAcadWkInfo.type}]`;
+
+if(currAcadWkInfo.sem === "Semester 1") {
+  console.log((currAcadWkInfo.num / lastWeekOfSem1));
+  var elem = document.getElementById("progress_bar");
+  elem.style.width = (currAcadWkInfo.num / 13) * 100 + "%";
+  document.getElementById("progress_percentage").innerHTML = Math.ceil((currAcadWkInfo.num / 13) * 100) + "%";
+}
+
 function setTime() {
   document.getElementById("date").innerHTML = new Date().toLocaleString('en-GB', options);
+}
+
+function textSizeHelper(x, func) {
+    console.log(func);
+    var size = x.currentStyle || parseInt(getComputedStyle(x, null).fontSize.slice(0, -2));
+    if (size) {
+      size = func(size) + "px";
+      console.log("new size:", size);
+      (x).style.fontSize = size;
+    }
+}
+
+function textSizeRecursive(x, func) {
+    console.log(x, "x:");
+    Array.from(x).forEach((y) => {
+        console.log(y, "y:");
+        if (y.children !== undefined) textSizeRecursive(y.children, func);
+        textSizeHelper(y, func);
+    });
+}
+
+function increaseTextSize() {
+    textSizeRecursive(document.body.children, x => x + 1);
+}
+
+function decreaseTextSize() {
+    textSizeRecursive(document.body.children, x => x - 1);
 }
 
 setInterval(setTime, 1000);
