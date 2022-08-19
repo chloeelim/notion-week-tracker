@@ -3,7 +3,8 @@ const lastWeekOfSem1 = 23;
 const lastWeekOfSem2 = 40;
 const lastWeekOfSpecialSem1 = 46;
 const lastWeekOfSpecialSem2 = 52;
-const options = {
+
+var options = {
   weekday: 'long',
   year: 'numeric',
   month: 'long',
@@ -130,7 +131,37 @@ function toggleWeekInfo() {
   }
 }
 
-setInterval(setTime, 1000);
+var timeInterval = setInterval(setTime, 1000);
+
+function toggleTime() {
+  var checkbox = document.getElementById("show-time");
+  var datetime = document.getElementById("date");
+  var showingTime = checkbox.checked;
+  if (showingTime) {
+    checkbox.checked = false;
+    options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    clearInterval(timeInterval);
+    datetime.innerHTML = new Date().toLocaleString('en-GB', options);
+  } else {
+    checkbox.checked = true;
+    options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+    timeInterval = setInterval(setTime, 1000);
+  }
+}
 
 const WeekType = {
   Instructional: 'Instructional',

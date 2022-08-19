@@ -41,7 +41,6 @@
       <h2 id="curr_wk"></h2>
       <div id="curr_datetime">
         <span id="date"></span>
-        <span id="time"></span>
       </div>
 
       <div id="progress_track">
@@ -91,6 +90,14 @@
              <span class="slider round"></span>
            </label>
          </div>
+          <!-- toggle time display -->
+          <div class="settings-field">
+            <span>Show Time</span>
+            <label class="switch" onClick="toggleTime()">
+              <input type="checkbox" id="show-time" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
