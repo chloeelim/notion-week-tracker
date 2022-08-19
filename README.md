@@ -7,28 +7,23 @@ Why? Because I'm procrastinating  doing any actual work :)
 
 Hosted on Netlify: https://phenomenal-cajeta-f14cdd.netlify.app/
 
-<video width="320" height="240" controls>
-  <source src="notion-wk-tracker-demo.gif" type="video/gif">
-</video>
+![notion-wk-tracker-demo](https://user-images.githubusercontent.com/79991214/185676714-57135fdd-09f8-483f-9201-733f432e1b88.gif)
 
 Comes with features to toggle font size:
 
-<video width="320" height="240" controls>
-  <source src="notion-wk-tracker-font-size.gif" type="video/gif">
-</video>
+![notion-wk-tracker-font-size](https://user-images.githubusercontent.com/79991214/185676928-bb171aeb-54c0-4150-86be-df4fa87674b7.gif)
+
 
 And toggle between dark/ light mode:
 
-<video width="320" height="240" controls>
-  <source src="notion-wk-tracker-dark-light-mode.gif" type="video/gif">
-</video>
+![notion-wk-tracker-dark-light-mode](https://user-images.githubusercontent.com/79991214/185676954-39614a2d-2829-4cab-a9a5-ab7d0eef2e92.gif)
+
 
 And customise some settings (visibility of progress bar/ time/ week type,
 and progress bar color):
 
-<video width="320" height="240" controls>
-  <source src="notion-wk-tracker-settings.gif" type="video/gif">
-</video>
+https://user-images.githubusercontent.com/79991214/185677223-8d31a0e4-0682-48eb-8d08-39a75c6941b5.mov
 
-Credits: Logic for calculating weeks taken from 
-https://github.com/nusmodifications/nusmods/tree/master/packages/nusmoderator
+
+
+Credits: Logic for calculating weeks taken from https://github.com/nusmodifications/nusmods/tree/master/packages/nusmoderator
