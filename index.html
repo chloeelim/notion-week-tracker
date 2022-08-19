@@ -59,6 +59,7 @@
         <span class="close" onClick="closeSettingsModal()">&times;</span>
         <div>
           <h3>Settings</h3>
+          <!-- toggle progress bar visibility -->
           <div class="settings-field">
             <span>Show progress bar and percentage</span>
             <label class="switch" onClick="toggleProgressShow()">
@@ -66,6 +67,7 @@
               <span class="slider round"></span>
             </label>
           </div>
+          <!-- toggle progress bar color -->
           <div class="settings-field">
             <span>Set progress bar color</span>
             <div class="color-palette">
@@ -81,6 +83,14 @@
                     onClick="setProgressBarColor('red')"></span>
             </div>
           </div>
+          <!-- toggle week info -->
+          <div class="settings-field">
+           <span>Show Week Type</span>
+           <label class="switch" onClick="toggleWeekInfo()">
+             <input type="checkbox" id="show-week-info" checked>
+             <span class="slider round"></span>
+           </label>
+         </div>
         </div>
       </div>
     </div>

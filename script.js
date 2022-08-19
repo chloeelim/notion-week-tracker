@@ -117,6 +117,19 @@ function setProgressBarColor(color) {
   document.getElementById("progress_bar").style.backgroundColor = progressBarColor[0];
 }
 
+function toggleWeekInfo() {
+  var checkbox = document.getElementById("show-week-info");
+  var wkInfo = document.getElementById("curr_wk");
+  var showingWeekType = checkbox.checked;
+  if (showingWeekType) {
+    checkbox.checked = false;
+    wkInfo.innerHTML = `AY22/23 ${currAcadWkInfo.sem}, Week ${currAcadWkInfo.num}`;
+  } else {
+    checkbox.checked = true;
+    wkInfo.innerHTML = `AY22/23 ${currAcadWkInfo.sem}, Week ${currAcadWkInfo.num} [${currAcadWkInfo.type}]`;
+  }
+}
+
 setInterval(setTime, 1000);
 
 const WeekType = {
