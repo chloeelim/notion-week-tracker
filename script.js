@@ -65,7 +65,7 @@ function toggleAppearance() {
         Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "black");
         document.getElementById("progress").style.backgroundColor = "#aaaaaa55";
     } else {
-        body.style.backgroundColor = "rgb(63,63,63)";
+        body.style.backgroundColor = "rgb(25,25,25)";
         body.style.color = "white";
         Array.from(document.getElementsByClassName("controls")).forEach(x => x.style.fill = "white");
         document.getElementById("progress").style.backgroundColor = "white";
