@@ -1,0 +1,48 @@
+
+body {
+  font-family: system-ui;
+  background: #2961BA;  
+  color: white;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+#curr_wk {
+  font-size: 58px;
+  margin-bottom: 0.25em;
+}
+
+#curr_datetime {
+  font-size: 24px;
+  margin-top:0;
+  margin-bottom: 15px;
+}
+
+#progress {
+  width: 80%;
+  background-color: white;
+  border-radius: 15px;
+  height: 20px;
+}
+
+#progress_bar {
+  width: 1%;
+  height: 20px;
+  background-color: #179F59;
+  border-radius: 15px 0px 0px 15px;
+}
+
+#progress_percentage {
+  font-size: 20px;
+  text-align: center;
+  align-self: right;
+  justify-self: right;
+  width: 20%;
+}
+
+#progress_track {
+  display: flex;
+  flex-direction: row;
+}
