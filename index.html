@@ -59,11 +59,28 @@
         <span class="close" onClick="closeSettingsModal()">&times;</span>
         <div>
           <h3>Settings</h3>
-          <span>Show progress bar and percentage</span>
-          <label class="switch" onClick="toggleProgressShow()">
-            <input type="checkbox" id="show-progress-percentage" checked>
-            <span class="slider round"></span>
-          </label>
+          <div class="settings-field">
+            <span>Show progress bar and percentage</span>
+            <label class="switch" onClick="toggleProgressShow()">
+              <input type="checkbox" id="show-progress-percentage" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="settings-field">
+            <span>Set progress bar color</span>
+            <div class="color-palette">
+              <span class="dot" style="background-color: #179F59; box-shadow: 0px 0px 0px 2px;"
+                    id="green-prg" onClick="setProgressBarColor('green')"></span> <!-- default progress bar color -->
+              <span class="dot" style="background-color: #17539F;" id="blue-prg"
+                    onClick="setProgressBarColor('blue')"></span>
+              <span class="dot" style="background-color: #8431C8;" id="purple-prg"
+                    onClick="setProgressBarColor('purple')"></span>
+              <span class="dot" style="background-color: #FFC61C;" id="yellow-prg"
+                    onClick="setProgressBarColor('yellow')"></span>
+              <span class="dot" style="background-color: #9F1717;" id="red-prg"
+                    onClick="setProgressBarColor('red')"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

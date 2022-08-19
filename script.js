@@ -18,7 +18,21 @@ const currAcadWkInfo = getAcadWeekInfo(new Date());
 document.getElementById("curr_wk").innerHTML = `AY22/23 ${currAcadWkInfo.sem}, Week ${currAcadWkInfo.num}
                                                 [${currAcadWkInfo.type}]`;
 
-if(currAcadWkInfo.sem === "Semester 1") {
+var progressBarColorOptions;
+var progressBarColor;
+
+window.onload = () => {
+  progressBarColorOptions = {
+      green: ['#179F59', document.getElementById("green-prg")],
+      blue: ['#17539F', document.getElementById("blue-prg")],
+      purple: ['#8431C8', document.getElementById("purple-prg")],
+      yellow: ['#FFC61C', document.getElementById("yellow-prg")],
+      red: ['#9F1717', document.getElementById("red-prg")]
+  }
+  progressBarColor = progressBarColorOptions["green"]; // default: green
+}
+
+if (currAcadWkInfo.sem === "Semester 1") {
   console.log((currAcadWkInfo.num / lastWeekOfSem1));
   var elem = document.getElementById("progress_bar");
   elem.style.width = (currAcadWkInfo.num / 13) * 100 + "%";
@@ -94,6 +108,13 @@ function toggleProgressShow() {
       checkbox.checked = true;
       progress.style.display = "flex";
   }
+}
+
+function setProgressBarColor(color) {
+  progressBarColor[1].style.boxShadow = "";
+  progressBarColor = progressBarColorOptions[color];
+  progressBarColor[1].style.boxShadow = "0px 0px 0px 2px";
+  document.getElementById("progress_bar").style.backgroundColor = progressBarColor[0];
 }
 
 setInterval(setTime, 1000);
